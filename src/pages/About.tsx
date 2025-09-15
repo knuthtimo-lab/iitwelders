@@ -6,80 +6,79 @@ import content from '@/content/content.json';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-slate-900">
       <Header />
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section className="py-24 hero-gradient">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h1 className="text-display-md font-bold text-foreground">
-                {content.about.title}
+      <main>
+        {/* Hero Section with Image */}
+        <section className="relative py-32 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/carousel_4.png)' }}
+          >
+            <div className="absolute inset-0 bg-slate-900/80"></div>
+          </div>
+
+          {/* Geometric Elements */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 w-64 h-64 bg-blue-400/5 rounded-full blur-2xl"></div>
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Welcome to
+                <span className="text-blue-400"> Our Company</span>
               </h1>
-              <p className="text-xl text-muted">
-                A legacy of excellence in Texas welding and fabrication
+              <p className="text-xl text-slate-300 leading-relaxed">
+                A Texas-based welding and fabrication company providing contract personnel 
+                and expert services throughout the United States and Gulf of Mexico.
               </p>
             </div>
           </div>
         </section>
 
-        {/* About Content */}
-        <section className="py-24">
+        {/* Main Content */}
+        <section className="py-24 bg-slate-800">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div className="space-y-6 animate-fade-in">
-                  <div className="bg-gradient-card p-8 rounded-xl border border-border">
-                    <p className="text-muted leading-relaxed text-lg">
-                      {content.about.col1}
+                <div className="space-y-8">
+                  <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
+                  <div className="space-y-6 text-slate-300 leading-relaxed">
+                    <p>
+                      International Inspection Technology, a DBA of International Welding Technology, is a South Texas based company 
+                      which provides contract personnel to several companies throughout the United States and the Gulf of Mexico.
                     </p>
-                  </div>
-                  
-                  {/* Company Stats */}
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-gradient-card p-6 rounded-xl border border-border text-center">
-                      <div className="text-3xl font-bold text-accent mb-2">500+</div>
-                      <div className="text-sm text-muted">Projects Completed</div>
-                    </div>
-                    <div className="bg-gradient-card p-6 rounded-xl border border-border text-center">
-                      <div className="text-3xl font-bold text-accent mb-2">20+</div>
-                      <div className="text-sm text-muted">Years Experience</div>
-                    </div>
+                    <p>
+                      These employees include various classes of Supervisors, Welders, Fitters, Safety Supervisors, Time Keepers, 
+                      Administrators and any other personnel crafts. Our employees have worked on numerous projects for several companies. 
+                      These projects include new fabrication and repair of Oil Rigs, Gas Land Rigs, Refinery and Civil Structure.
+                    </p>
+                    <p>
+                      We are a rapidly growing company in the Welding and Fabrication Industry. We have three locations in the Texas area 
+                      to better serve our clients' needs: Brownsville, Ingleside and Corpus Christi Texas.
+                    </p>
                   </div>
                 </div>
                 
-                <div className="space-y-6 animate-fade-in">
-                  <div className="bg-gradient-card p-8 rounded-xl border border-border">
-                    <p className="text-muted leading-relaxed text-lg">
-                      {content.about.col2}
+                <div className="space-y-8">
+                  <h2 className="text-3xl font-bold text-white mb-6">Our Capabilities</h2>
+                  <div className="space-y-6 text-slate-300 leading-relaxed">
+                    <p>
+                      We service our clients with any type of welding and fabrication as well as welder certifications on AWS, ASME and ABS Codes. 
+                      Our Brownsville Shop is capable of all types of fabrication both big and small including structural or pipe fabrication.
                     </p>
-                  </div>
-
-                  {/* Values */}
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-4 p-4 bg-gradient-card rounded-xl border border-border">
-                      <Building className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">Quality First</h3>
-                        <p className="text-muted text-sm">Every project meets the highest standards of craftsmanship and durability.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4 p-4 bg-gradient-card rounded-xl border border-border">
-                      <Users className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">Team Excellence</h3>
-                        <p className="text-muted text-sm">Our skilled professionals bring decades of combined experience to every job.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4 p-4 bg-gradient-card rounded-xl border border-border">
-                      <Award className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">Customer Focus</h3>
-                        <p className="text-muted text-sm">We build lasting relationships through reliable service and competitive pricing.</p>
-                      </div>
-                    </div>
+                    <p>
+                      We also have a related company that specializes in Heat Stress, X Rays, UT/MT NDE work at any job site. 
+                      For the past 13 years we have been servicing companies with refurbishing and building new Offshore Oil Rigs, 
+                      Gas Land Rigs, Pressure Vessels, Refineries as well as working in fabrication shops and other professional sites.
+                    </p>
+                    <p>
+                      We support our clients at every phase of their project's needs, we have earned a good reputation for providing 
+                      good quality work and personnel to these companies.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -87,42 +86,65 @@ const About = () => {
           </div>
         </section>
 
-        {/* Timeline Section */}
-        <section className="py-24 bg-bg-elevated">
+        {/* Stats Section */}
+        <section className="py-24 bg-slate-900">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-white mb-4">Company Statistics</h2>
+                <p className="text-slate-400 text-lg">Our track record speaks for itself</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
+                  <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                  <div className="text-4xl font-bold text-white mb-2">800+</div>
+                  <div className="text-slate-400">Skilled Craftsmen</div>
+                  <div className="text-sm text-slate-500 mt-2">Ready for mobilization 24/7</div>
+                </div>
+                
+                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
+                  <Building className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                  <div className="text-4xl font-bold text-white mb-2">13+</div>
+                  <div className="text-slate-400">Years Experience</div>
+                  <div className="text-sm text-slate-500 mt-2">Serving the industry since 2008</div>
+                </div>
+                
+                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
+                  <Award className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                  <div className="text-4xl font-bold text-white mb-2">3</div>
+                  <div className="text-slate-400">Texas Locations</div>
+                  <div className="text-sm text-slate-500 mt-2">Brownsville, Ingleside, Corpus Christi</div>
+                </div>
+                
+                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
+                  <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                  <div className="text-4xl font-bold text-white mb-2">24/7</div>
+                  <div className="text-slate-400">Project Support</div>
+                  <div className="text-sm text-slate-500 mt-2">Always available for our clients</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Commitment Section */}
+        <section className="py-24 bg-slate-800">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-display-sm font-bold text-foreground mb-12">Our Journey</h2>
-              
-              <div className="space-y-8">
-                <div className="flex items-center space-x-6 p-6 bg-gradient-card rounded-xl border border-border">
-                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-ink font-bold">2004</span>
-                  </div>
-                  <div className="text-left">
-                    <h3 className="font-semibold text-foreground mb-2">Company Founded</h3>
-                    <p className="text-muted">Established in Texas with a commitment to quality welding and fabrication services.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-6 p-6 bg-gradient-card rounded-xl border border-border">
-                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-ink font-bold">2010</span>
-                  </div>
-                  <div className="text-left">
-                    <h3 className="font-semibold text-foreground mb-2">Facility Expansion</h3>
-                    <p className="text-muted">Expanded our fabrication shop with state-of-the-art equipment and technology.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-6 p-6 bg-gradient-card rounded-xl border border-border">
-                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-ink font-bold">2024</span>
-                  </div>
-                  <div className="text-left">
-                    <h3 className="font-semibold text-foreground mb-2">Continued Excellence</h3>
-                    <p className="text-muted">Today we continue to serve Texas with unmatched quality and service.</p>
-                  </div>
-                </div>
+              <h2 className="text-4xl font-bold text-white mb-8">Our Commitment</h2>
+              <div className="space-y-6 text-slate-300 leading-relaxed text-lg">
+                <p>
+                  All of our employees have years of experience in these fields and have been with our company 
+                  from one job to another meeting the quality and completion time of all projects.
+                </p>
+                <p>
+                  Our employee database consists of more than 800 highly skilled crafts which are ready 24/7 
+                  to be mobilized to any project site.
+                </p>
+                <p className="text-xl font-semibold text-white">
+                  We look forward to assisting your company in any possible way with your contract needs.
+                </p>
               </div>
             </div>
           </div>

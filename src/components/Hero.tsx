@@ -2,126 +2,117 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Wrench, Shield, Award } from 'lucide-react';
 import content from '@/content/content.json';
-import heroWelder from '@/assets/hero-welder.jpg';
-import heroFacility from '@/assets/hero-facility.jpg';
+import Carousel from './Carousel';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
-      {/* Geometric Background Elements */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Hero Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url(/hero_section_background.png)' }}
+      >
+        {/* Dark overlay for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/90"></div>
+      </div>
+
+      {/* Geometric Lines - Dispel Style */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 right-0 w-1/2 h-full border-l border-t border-accent/20"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-2/3 border-r border-b border-accent/10"></div>
+        {/* Diagonal lines like Dispel */}
+        <div className="absolute top-0 right-0 w-full h-full">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="60" y1="0" x2="100" y2="40" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="0.1" />
+            <line x1="70" y1="0" x2="100" y2="30" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="0.1" />
+            <line x1="80" y1="0" x2="100" y2="20" stroke="rgba(59, 130, 246, 0.15)" strokeWidth="0.1" />
+          </svg>
+        </div>
+        {/* Corner frame elements */}
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 border-l-2 border-b-2 border-blue-400/20"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 border-r-2 border-t-2 border-blue-400/20"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-screen py-24">
-          {/* Content - Left Side */}
-          <div className="lg:col-span-6 space-y-8 animate-fade-in">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen py-16">
+          {/* Content - Left Side - Exact Dispel Style */}
+          <div className="space-y-8 max-w-xl">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-ink leading-[0.9] tracking-tight">
-                {content.home.heroTitle}
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.85] tracking-tight">
+                Redefine How You
+                <br />
+                <span className="text-blue-400">Connect to Welding</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-muted max-w-2xl leading-relaxed font-light">
-                {content.home.heroSubtitle}
+              <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed font-light">
+                Professional welding and fabrication services for industrial and commercial projects—connecting to quality craftsmanship in under 30 seconds to cut downtime, lower costs, and accelerate modernization.
               </p>
             </div>
 
-            {/* CTAs - Matching Dispel Style */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            {/* CTAs - Exact Dispel Style */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Button 
                 size="xl" 
-                variant="hero"
-                className="bg-ink text-bg hover:bg-ink/90 shadow-elevated font-semibold text-lg px-8 py-4 h-auto"
+                className="bg-white hover:bg-gray-100 text-slate-900 font-semibold text-lg px-8 py-4 h-auto shadow-lg rounded-lg"
               >
                 Get Quote
               </Button>
               <Button 
                 variant="outline" 
                 size="xl"
-                className="border-ink/30 text-ink hover:bg-ink/10 hover:border-ink font-semibold text-lg px-8 py-4 h-auto"
+                className="border-slate-500/50 bg-slate-800/50 text-white hover:bg-slate-700/50 hover:border-slate-400 font-semibold text-lg px-8 py-4 h-auto rounded-lg backdrop-blur-sm"
               >
-                {content.home.ctaServices}
+                Explore Services
               </Button>
             </div>
           </div>
 
-          {/* Hero Images - Right Side */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative">
-              {/* Main Hero Image Container */}
-              <div className="relative bg-gradient-to-br from-bg-elevated/50 to-transparent p-1 rounded-2xl">
-                <div className="relative overflow-hidden rounded-xl">
-                  <img 
-                    src={heroWelder}
-                    alt="Professional welder working with industrial equipment"
-                    className="w-full h-[500px] object-cover"
-                  />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent"></div>
-                </div>
-              </div>
-              
-              {/* Secondary Image - Overlaid */}
-              <div className="absolute -top-8 -right-8 w-64 h-48 bg-gradient-to-br from-bg-elevated/50 to-transparent p-1 rounded-xl">
-                <div className="relative overflow-hidden rounded-lg h-full">
-                  <img 
-                    src={heroFacility}
-                    alt="Industrial fabrication facility"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent"></div>
+          {/* 3D Perspective Container - Right Side - Exact Dispel Style */}
+          <div className="relative flex justify-center items-start w-full -mt-12">
+            {/* 3D Tilted Screen Container - Exact Dispel Style */}
+            <div className="relative w-full max-w-xl">
+              {/* 3D Container with perspective */}
+              <div 
+                className="relative"
+                style={{ 
+                  transform: 'perspective(1000px) rotateY(-15deg) rotateX(5deg)',
+                  transformStyle: 'preserve-3d'
+                }}
+              >
+                {/* Screen frame */}
+                <div className="relative bg-slate-800 rounded-lg p-1 shadow-2xl border border-slate-600">
+                  {/* Title bar */}
+                  <div className="bg-slate-700 rounded-t px-4 py-2 flex items-center justify-between">
+                    <span className="text-white text-sm font-medium">Texas Welding Facility</span>
+                    <div className="flex space-x-1">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                  </div>
                   
-                  {/* Label */}
-                  <div className="absolute top-3 left-3 bg-bg/80 backdrop-blur-sm rounded px-2 py-1">
-                    <span className="text-ink text-xs font-medium">Our Facility</span>
+                  {/* Carousel in the "screen" */}
+                  <div className="w-full h-[40rem] relative">
+                    <Carousel className="w-full h-full rounded-b-lg overflow-hidden" />
                   </div>
                 </div>
-              </div>
-              
-              {/* Decorative border elements */}
-              <div className="absolute -inset-4 border border-accent/20 rounded-2xl pointer-events-none"></div>
-              <div className="absolute -inset-8 border-l border-t border-accent/10 rounded-2xl pointer-events-none"></div>
-            </div>
 
-            {/* Floating Stats Cards */}
-            <div className="absolute -bottom-6 -left-6 bg-card/90 backdrop-blur-sm rounded-xl p-6 shadow-elevated border border-border">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
-                  <Wrench className="h-6 w-6 text-accent" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-ink">500+</div>
-                  <div className="text-sm text-muted">Projects Completed</div>
-                </div>
+                {/* 3D depth elements */}
+                <div 
+                  className="absolute inset-0 bg-slate-900 rounded-lg -z-10"
+                  style={{ transform: 'translateZ(-20px)' }}
+                ></div>
+                <div 
+                  className="absolute inset-0 bg-slate-950 rounded-lg -z-20"
+                  style={{ transform: 'translateZ(-40px)' }}
+                ></div>
               </div>
-            </div>
-            
-            <div className="absolute -top-6 right-8 bg-card/90 backdrop-blur-sm rounded-xl p-6 shadow-elevated border border-border">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
-                  <Award className="h-6 w-6 text-accent" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-ink">20+</div>
-                  <div className="text-sm text-muted">Years Experience</div>
-                </div>
-              </div>
+
+              {/* Floating decorative elements */}
+              <div className="absolute -top-4 -right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-1 h-1 bg-blue-300 rounded-full animate-pulse delay-1000"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Notice Bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-accent/10 border-t border-accent/20 z-30">
-        <div className="container mx-auto px-4 py-3">
-          <div className="text-center">
-            <a href="/employees-notice" className="text-accent hover:text-accent/80 transition-smooth text-sm font-medium">
-              {content.home.employeesNotice}
-            </a>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
