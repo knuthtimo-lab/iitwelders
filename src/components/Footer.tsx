@@ -16,7 +16,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-700">
+    <footer className="bg-slate-900 border-t border-slate-700 footer-transition">
       <div className="container mx-auto px-4 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">

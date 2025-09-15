@@ -30,7 +30,7 @@ const Contact = () => {
       
       <main>
         {/* Hero Section with Image */}
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative py-32 overflow-hidden hero-transition">
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -59,7 +59,7 @@ const Contact = () => {
         </section>
 
         {/* Contact Methods */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -88,6 +88,15 @@ const Contact = () => {
             </div>
           </div>
         </section>
+
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-800 via-slate-800/80 to-slate-900/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 via-transparent to-slate-900/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
 
         {/* Office Locations */}
         <section className="py-24 bg-slate-900">
@@ -171,7 +180,7 @@ const Contact = () => {
         </section>
 
         {/* Operations Manager */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
@@ -238,7 +247,7 @@ const Contact = () => {
         </section>
 
         {/* Interactive Map Section */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -337,6 +346,15 @@ const Contact = () => {
             </div>
           </div>
         </section>
+
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-800 via-slate-800/80 to-slate-900/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 via-transparent to-slate-900/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
 
         {/* Contact Forms Section */}
         <section className="py-24 bg-slate-900">

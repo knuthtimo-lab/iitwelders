@@ -44,7 +44,7 @@ const Careers = () => {
       
       <main>
         {/* Hero Section with Image */}
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative py-32 overflow-hidden hero-transition">
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -73,7 +73,7 @@ const Careers = () => {
         </section>
 
         {/* Current Openings */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -122,6 +122,15 @@ const Careers = () => {
           </div>
         </section>
 
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-800 via-slate-800/80 to-slate-900/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 via-transparent to-slate-900/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
+
         {/* Benefits Section */}
         <section className="py-24 bg-slate-900">
           <div className="container mx-auto px-4">
@@ -144,7 +153,7 @@ const Careers = () => {
         </section>
 
         {/* Application Process */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">

@@ -47,7 +47,7 @@ const Services = () => {
       
       <main>
         {/* Hero Section with Image */}
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative py-32 overflow-hidden hero-transition">
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -76,7 +76,7 @@ const Services = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 bg-pattern-grid section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -91,7 +91,7 @@ const Services = () => {
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {services.map((service, index) => (
-                      <div key={index} className="bg-slate-700/50 border border-slate-600 rounded-lg p-4 hover:bg-slate-700/70 transition-all duration-300">
+                      <div key={index} className="card-enhanced card-hover hover-slide p-4">
                         <div className="flex items-center space-x-3">
                           <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0" />
                           <span className="text-white font-medium">{service}</span>
@@ -112,7 +112,7 @@ const Services = () => {
                   
                   <div className="space-y-4">
                     {specialties.map((specialty, index) => (
-                      <div key={index} className="bg-slate-700/50 border border-slate-600 rounded-lg p-6 hover:bg-slate-700/70 transition-all duration-300">
+                      <div key={index} className="card-enhanced card-hover hover-slide p-6">
                         <div className="flex items-center space-x-3">
                           <Award className="h-6 w-6 text-blue-400 flex-shrink-0" />
                           <div>
@@ -129,8 +129,17 @@ const Services = () => {
           </div>
         </section>
 
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-800 via-slate-800/80 to-slate-900/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 via-transparent to-slate-900/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
+
         {/* Certifications Section */}
-        <section className="py-24 bg-slate-900">
+        <section className="py-24 bg-slate-900 bg-pattern-lines section-transition-gradient">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto text-center">
               <div className="flex items-center justify-center space-x-4 mb-12">
@@ -142,7 +151,7 @@ const Services = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="bg-slate-800/50 border border-slate-600 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-300">
+                  <div key={index} className="card-enhanced card-hover hover-slide p-6">
                     <div className="space-y-4">
                       <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto">
                         <Shield className="h-6 w-6 text-blue-400" />
@@ -154,19 +163,19 @@ const Services = () => {
               </div>
 
               <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8">
+                <div className="card-enhanced card-hover hover-slide p-8">
                   <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-white mb-2">Expert Team</h3>
                   <p className="text-slate-400">Certified professionals with decades of experience in industrial welding</p>
                 </div>
                 
-                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8">
+                <div className="card-enhanced card-hover hover-slide p-8">
                   <Settings className="h-12 w-12 text-blue-400 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-white mb-2">Modern Equipment</h3>
                   <p className="text-slate-400">State-of-the-art welding equipment and fabrication tools</p>
                 </div>
                 
-                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8">
+                <div className="card-enhanced card-hover hover-slide p-8">
                   <Award className="h-12 w-12 text-blue-400 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-white mb-2">Quality Assurance</h3>
                   <p className="text-slate-400">Rigorous quality control and safety standards on every project</p>

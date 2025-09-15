@@ -51,6 +51,7 @@ const Hero = () => {
               <Button 
                 size="xl" 
                 className="bg-white hover:bg-gray-100 text-slate-900 font-semibold text-lg px-8 py-4 h-auto shadow-lg rounded-lg hover-lift hover-glow"
+                onClick={() => window.location.href = '/contact-us'}
               >
                 Get Quote
               </Button>
@@ -58,6 +59,7 @@ const Hero = () => {
                 variant="outline" 
                 size="xl"
                 className="border-slate-500/50 bg-slate-800/50 text-white hover:bg-slate-700/50 hover:border-slate-400 font-semibold text-lg px-8 py-4 h-auto rounded-lg backdrop-blur-sm hover-lift"
+                onClick={() => window.location.href = '/services-and-specialties'}
               >
                 Explore Services
               </Button>

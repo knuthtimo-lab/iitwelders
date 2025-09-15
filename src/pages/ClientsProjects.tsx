@@ -564,7 +564,7 @@ const ClientsProjects = () => {
       
       <main>
         {/* Hero Section with Image */}
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative py-32 overflow-hidden hero-transition">
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -592,57 +592,75 @@ const ClientsProjects = () => {
           </div>
         </section>
 
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-800/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/30 to-slate-800/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-transparent to-slate-800/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
+
         {/* Stats Section */}
         <section className="py-16 bg-slate-800">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div className="text-center animate-fadeInUp">
+                <div className="stat-card animate-fadeInUp">
                   <div 
                     ref={clientsCount.ref}
-                    className="text-4xl lg:text-5xl font-bold text-white mb-2 animate-bounce-subtle"
+                    className="stat-number"
                   >
                     {clientsCount.count}
                   </div>
-                  <p className="text-slate-400 text-sm">Major Clients Served</p>
+                  <p className="stat-label">Major Clients Served</p>
                 </div>
-                <div className="text-center animate-fadeInUp" style={{animationDelay: '0.1s'}}>
+                
+                <div className="stat-card animate-fadeInUp" style={{animationDelay: '0.1s'}}>
                   <div 
                     ref={projectsCount.ref}
-                    className="text-4xl lg:text-5xl font-bold text-white mb-2 animate-bounce-subtle"
-                    style={{animationDelay: '0.2s'}}
+                    className="stat-number"
                   >
                     {projectsCount.count}
                   </div>
-                  <p className="text-slate-400 text-sm">Projects Completed</p>
+                  <p className="stat-label">Projects Completed</p>
                 </div>
-                <div className="text-center animate-fadeInUp" style={{animationDelay: '0.2s'}}>
+                
+                <div className="stat-card animate-fadeInUp" style={{animationDelay: '0.2s'}}>
                   <div 
                     ref={longestProjectCount.ref}
-                    className="text-4xl lg:text-5xl font-bold text-white mb-2 animate-bounce-subtle"
-                    style={{animationDelay: '0.4s'}}
+                    className="stat-number"
                   >
                     {longestProjectCount.count}
                   </div>
-                  <p className="text-slate-400 text-sm">Months Longest Project</p>
+                  <p className="stat-label">Months Longest Project</p>
                 </div>
-                <div className="text-center animate-fadeInUp" style={{animationDelay: '0.3s'}}>
+                
+                <div className="stat-card animate-fadeInUp" style={{animationDelay: '0.3s'}}>
                   <div 
                     ref={maxPersonnelCount.ref}
-                    className="text-4xl lg:text-5xl font-bold text-white mb-2 animate-bounce-subtle"
-                    style={{animationDelay: '0.6s'}}
+                    className="stat-number"
                   >
                     {maxPersonnelCount.count}
                   </div>
-                  <p className="text-slate-400 text-sm">Max Personnel on Site</p>
+                  <p className="stat-label">Max Personnel on Site</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-800 via-slate-800/80 to-slate-800/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-slate-800/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 via-transparent to-slate-800/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
+
         {/* Search and Filter Section */}
-        <section className="py-8 bg-slate-800">
+        <section className="py-8 bg-slate-800 bg-pattern-dots section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
@@ -655,7 +673,7 @@ const ClientsProjects = () => {
                       placeholder="Search projects, clients, or locations..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                      className="w-full pl-10 pr-4 py-3 bg-slate-700/80 backdrop-blur-sm border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 transition-all duration-300 hover:border-accent-blue/50"
                     />
                   </div>
                 </div>
@@ -665,7 +683,7 @@ const ClientsProjects = () => {
                   <select
                     value={selectedIndustry}
                     onChange={(e) => setSelectedIndustry(e.target.value)}
-                    className="w-full py-3 px-4 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                    className="w-full py-3 px-4 bg-slate-700/80 backdrop-blur-sm border border-slate-600/50 rounded-lg text-white focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 transition-all duration-300 hover:border-accent-blue/50"
                   >
                     {industries.map(industry => (
                       <option key={industry} value={industry}>{industry}</option>
@@ -678,7 +696,7 @@ const ClientsProjects = () => {
                   <select
                     value={selectedLocation}
                     onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="w-full py-3 px-4 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                    className="w-full py-3 px-4 bg-slate-700/80 backdrop-blur-sm border border-slate-600/50 rounded-lg text-white focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 transition-all duration-300 hover:border-accent-blue/50"
                   >
                     {locations.map(location => (
                       <option key={location} value={location}>{location}</option>
@@ -697,8 +715,17 @@ const ClientsProjects = () => {
           </div>
         </section>
 
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-800 via-slate-800/80 to-slate-900/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 via-transparent to-slate-900/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
+
         {/* Projects Grid */}
-        <section className="py-24 bg-slate-900">
+        <section className="py-24 bg-slate-900 bg-pattern-industrial section-transition-gradient">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
@@ -737,13 +764,13 @@ const ClientsProjects = () => {
                     </div>
                   ) : (
                     filteredProjects.map((project, index) => (
-                      <div key={index} className="bg-slate-800/50 border border-slate-600 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-300 hover:scale-[1.02] touch-manipulation">
+                      <div key={index} className="card-enhanced card-hover hover-slide p-6 touch-manipulation">
                         <div className="space-y-4">
                           {/* Industry Badge */}
                           <div className="flex items-start justify-between">
                             <div className="flex-1">
-                              <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg px-2 py-1 inline-block mb-3">
-                                <span className="text-blue-400 text-xs font-medium">{project.industry}</span>
+                              <div className="bg-accent-gradient border border-accent-blue/30 rounded-lg px-3 py-1 inline-block mb-3 shadow-lg">
+                                <span className="text-white text-xs font-medium">{project.industry}</span>
                               </div>
                               <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">{project.client}</h3>
                               <div className="flex items-center space-x-2 text-slate-400">
@@ -751,8 +778,8 @@ const ClientsProjects = () => {
                                 <span className="text-sm line-clamp-1">{project.location}</span>
                               </div>
                             </div>
-                            <div className="bg-blue-500/20 rounded-lg px-3 py-1 ml-2">
-                              <span className="text-blue-400 text-sm font-medium">{project.personnel}</span>
+                            <div className="bg-accent-blue/20 border border-accent-blue/30 rounded-lg px-3 py-1 ml-2 hover-glow">
+                              <span className="text-accent-blue text-sm font-medium">{project.personnel}</span>
                         </div>
                       </div>
 
@@ -790,7 +817,7 @@ const ClientsProjects = () => {
         </section>
 
         {/* Industry Sectors */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 section-transition-wave">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto text-center">
               <h2 className="text-4xl font-bold text-white mb-12">Industry Sectors</h2>
@@ -824,7 +851,7 @@ const ClientsProjects = () => {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 touch-manipulation"
+          className="fixed bottom-8 right-8 z-50 bg-accent-gradient hover:bg-blue-700 text-white p-4 rounded-full shadow-xl hover-lift btn-hover-lift touch-manipulation border border-accent-blue/30"
           aria-label="Back to top"
         >
           <ArrowUp className="h-6 w-6" />

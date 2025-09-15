@@ -2,7 +2,41 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Building, Users, Award, ChevronRight } from 'lucide-react';
+import { useCountUp } from '@/hooks/useCountUp';
 import content from '@/content/content.json';
+
+// Stat Card Component with Count Up Animation
+const StatCard = ({ 
+  icon: Icon, 
+  value, 
+  label, 
+  description, 
+  suffix = '', 
+  delay = 0 
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  value: number;
+  label: string;
+  description: string;
+  suffix?: string;
+  delay?: number;
+}) => {
+  const { count, ref } = useCountUp({ 
+    end: value, 
+    duration: 2500, 
+    delay: delay,
+    suffix: suffix 
+  });
+
+  return (
+    <div ref={ref} className="stat-card hover-lift">
+      <Icon className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+      <div className="stat-number">{count}</div>
+      <div className="stat-label">{label}</div>
+      <div className="text-sm text-slate-500 mt-2">{description}</div>
+    </div>
+  );
+};
 
 const About = () => {
   return (
@@ -27,7 +61,7 @@ const About = () => {
       
       <main>
         {/* Hero Section with Image */}
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative py-32 overflow-hidden hero-transition">
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -56,7 +90,7 @@ const About = () => {
         </section>
 
         {/* Main Content */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 bg-pattern-dots section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -102,8 +136,17 @@ const About = () => {
           </div>
         </section>
 
+        {/* Soft Transition */}
+        <div className="relative h-40 bg-gradient-to-b from-slate-800 via-slate-800/80 to-slate-900/60">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-800/20 via-transparent to-slate-900/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent rounded-full"></div>
+          </div>
+        </div>
+
         {/* Stats Section */}
-        <section className="py-24 bg-slate-900">
+        <section className="py-24 bg-slate-900 bg-pattern-industrial section-transition-wave">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -112,40 +155,47 @@ const About = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
-                  <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <div className="text-4xl font-bold text-white mb-2">800+</div>
-                  <div className="text-slate-400">Skilled Craftsmen</div>
-                  <div className="text-sm text-slate-500 mt-2">Ready for mobilization 24/7</div>
-                </div>
+                <StatCard
+                  icon={Users}
+                  value={800}
+                  label="Skilled Craftsmen"
+                  description="Ready for mobilization 24/7"
+                  suffix="+"
+                  delay={0}
+                />
                 
-                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
-                  <Building className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <div className="text-4xl font-bold text-white mb-2">13+</div>
-                  <div className="text-slate-400">Years Experience</div>
-                  <div className="text-sm text-slate-500 mt-2">Serving the industry since 2008</div>
-                </div>
+                <StatCard
+                  icon={Building}
+                  value={13}
+                  label="Years Experience"
+                  description="Serving the industry since 2008"
+                  suffix="+"
+                  delay={200}
+                />
                 
-                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
-                  <Award className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <div className="text-4xl font-bold text-white mb-2">3</div>
-                  <div className="text-slate-400">Texas Locations</div>
-                  <div className="text-sm text-slate-500 mt-2">Brownsville, Ingleside, Corpus Christi</div>
-                </div>
+                <StatCard
+                  icon={Award}
+                  value={3}
+                  label="Texas Locations"
+                  description="Brownsville, Ingleside, Corpus Christi"
+                  delay={400}
+                />
                 
-                <div className="bg-slate-800/50 border border-slate-600 rounded-xl p-8 text-center">
-                  <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <div className="text-4xl font-bold text-white mb-2">24/7</div>
-                  <div className="text-slate-400">Project Support</div>
-                  <div className="text-sm text-slate-500 mt-2">Always available for our clients</div>
-                </div>
+                <StatCard
+                  icon={Users}
+                  value={24}
+                  label="Project Support"
+                  description="Always available for our clients"
+                  suffix="/7"
+                  delay={600}
+                />
               </div>
             </div>
           </div>
         </section>
 
         {/* Commitment Section */}
-        <section className="py-24 bg-slate-800">
+        <section className="py-24 bg-slate-800 bg-pattern-dots section-transition-soft">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-4xl font-bold text-white mb-8">Our Commitment</h2>
