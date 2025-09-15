@@ -3,13 +3,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import CompanyBlurb from '@/components/CompanyBlurb';
+import LogoSection from '@/components/LogoSection';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main id="main">
         <Hero />
+        <LogoSection />
         <CompanyBlurb />
       </main>
       <Footer />

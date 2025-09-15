@@ -2,77 +2,109 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Wrench, Shield, Award } from 'lucide-react';
 import content from '@/content/content.json';
+import heroWelder from '@/assets/hero-welder.jpg';
+import heroFacility from '@/assets/hero-facility.jpg';
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
-      {/* Background Image Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-bg/90 to-transparent z-10"></div>
+      {/* Geometric Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 right-0 w-1/2 h-full border-l border-t border-accent/20"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-2/3 border-r border-b border-accent/10"></div>
+      </div>
       
       <div className="container mx-auto px-4 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8 animate-fade-in-up">
-            <div className="space-y-4">
-              <h1 className="text-display-lg font-bold text-ink leading-none">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-screen py-24">
+          {/* Content - Left Side */}
+          <div className="lg:col-span-6 space-y-8 animate-fade-in">
+            <div className="space-y-6">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-ink leading-[0.9] tracking-tight">
                 {content.home.heroTitle}
               </h1>
-              <p className="text-xl text-muted max-w-lg leading-relaxed">
+              <p className="text-xl lg:text-2xl text-muted max-w-2xl leading-relaxed font-light">
                 {content.home.heroSubtitle}
               </p>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group">
+            {/* CTAs - Matching Dispel Style */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button 
+                size="xl" 
+                variant="hero"
+                className="bg-ink text-bg hover:bg-ink/90 shadow-elevated font-semibold text-lg px-8 py-4 h-auto"
+              >
+                Get Quote
+              </Button>
+              <Button 
+                variant="outline" 
+                size="xl"
+                className="border-ink/30 text-ink hover:bg-ink/10 hover:border-ink font-semibold text-lg px-8 py-4 h-auto"
+              >
                 {content.home.ctaServices}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg">
-                {content.home.ctaExplore}
-              </Button>
-            </div>
-
-            {/* Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
-              {content.home.features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-accent/20 rounded-md flex items-center justify-center">
-                    {index === 0 && <Wrench className="h-4 w-4 text-accent" />}
-                    {index === 1 && <Shield className="h-4 w-4 text-accent" />}
-                    {index === 2 && <Award className="h-4 w-4 text-accent" />}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-ink text-sm">{feature.title}</h3>
-                    <p className="text-muted text-xs leading-relaxed mt-1">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
-          {/* Hero Image Placeholder */}
-          <div className="relative lg:ml-8">
-            <div className="relative bg-gradient-card rounded-2xl p-8 shadow-elevated">
-              <div className="aspect-[4/3] bg-muted/20 rounded-xl flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <Wrench className="h-16 w-16 text-accent mx-auto" />
-                  <p className="text-muted text-sm">Industrial Facility Image</p>
+          {/* Hero Images - Right Side */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative">
+              {/* Main Hero Image Container */}
+              <div className="relative bg-gradient-to-br from-bg-elevated/50 to-transparent p-1 rounded-2xl">
+                <div className="relative overflow-hidden rounded-xl">
+                  <img 
+                    src={heroWelder}
+                    alt="Professional welder working with industrial equipment"
+                    className="w-full h-[500px] object-cover"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent"></div>
                 </div>
               </div>
               
-              {/* Floating Cards */}
-              <div className="absolute -bottom-4 -left-4 bg-card rounded-xl p-4 shadow-subtle border border-border">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-xs text-ink font-medium">Active Projects: 15+</span>
+              {/* Secondary Image - Overlaid */}
+              <div className="absolute -top-8 -right-8 w-64 h-48 bg-gradient-to-br from-bg-elevated/50 to-transparent p-1 rounded-xl">
+                <div className="relative overflow-hidden rounded-lg h-full">
+                  <img 
+                    src={heroFacility}
+                    alt="Industrial fabrication facility"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent"></div>
+                  
+                  {/* Label */}
+                  <div className="absolute top-3 left-3 bg-bg/80 backdrop-blur-sm rounded px-2 py-1">
+                    <span className="text-ink text-xs font-medium">Our Facility</span>
+                  </div>
                 </div>
               </div>
               
-              <div className="absolute -top-4 -right-4 bg-card rounded-xl p-4 shadow-subtle border border-border">
-                <div className="flex items-center space-x-2">
-                  <Award className="h-4 w-4 text-accent" />
-                  <span className="text-xs text-ink font-medium">20+ Years Experience</span>
+              {/* Decorative border elements */}
+              <div className="absolute -inset-4 border border-accent/20 rounded-2xl pointer-events-none"></div>
+              <div className="absolute -inset-8 border-l border-t border-accent/10 rounded-2xl pointer-events-none"></div>
+            </div>
+
+            {/* Floating Stats Cards */}
+            <div className="absolute -bottom-6 -left-6 bg-card/90 backdrop-blur-sm rounded-xl p-6 shadow-elevated border border-border">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                  <Wrench className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-ink">500+</div>
+                  <div className="text-sm text-muted">Projects Completed</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="absolute -top-6 right-8 bg-card/90 backdrop-blur-sm rounded-xl p-6 shadow-elevated border border-border">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                  <Award className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-ink">20+</div>
+                  <div className="text-sm text-muted">Years Experience</div>
                 </div>
               </div>
             </div>
