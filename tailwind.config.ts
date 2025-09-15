@@ -25,7 +25,7 @@ export default {
         bg: "hsl(var(--bg))",
         "bg-elevated": "hsl(var(--bg-elevated))",
         ink: "hsl(var(--ink))",
-        muted: "hsl(var(--muted))",
+        muted: "hsl(var(--muted-foreground))",
         accent: "hsl(var(--accent))",
         link: "hsl(var(--link))",
         
@@ -52,7 +52,7 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         "accent-color": {
-          DEFAULT: "hsl(var(--accent-color))",
+          DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -64,14 +64,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+          DEFAULT: "hsl(var(--background))",
+          foreground: "hsl(var(--foreground))",
+          primary: "hsl(var(--accent))",
+          "primary-foreground": "hsl(var(--accent-foreground))",
+          accent: "hsl(var(--secondary))",
+          "accent-foreground": "hsl(var(--secondary-foreground))",
+          border: "hsl(var(--border))",
+          ring: "hsl(var(--ring))",
         },
       },
       borderRadius: {

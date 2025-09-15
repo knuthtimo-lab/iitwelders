@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    /* Core brand colors (HSL) */
-    --bg: 210 24% 7%; /* #0B0F13 near-black */
-    --bg-elevated: 215 20% 12%; /* #121826 */
-    --ink: 210 17% 97%; /* #F7FAFC off-white */
-    --muted: 213 15% 70%; /* #A7B1C2 */
-    --accent: 355 75% 47%; /* #C1272D brand red */
-    --link: 213 94% 68%; /* #60A5FA */
+    /* Core brand colors (HSL values only) */
+    --bg: 210 24% 8%;
+    --bg-elevated: 215 20% 12%;
+    --ink: 210 17% 97%;
+    --muted: 213 15% 65%;
+    --accent: 355 75% 47%;
+    --link: 213 94% 68%;
     
-    /* Semantic mappings */
-    --background: var(--bg);
-    --foreground: var(--ink);
+    /* Semantic color mappings (use HSL values directly) */
+    --background: 210 24% 8%;
+    --foreground: 210 17% 97%;
     
-    --card: var(--bg-elevated);
-    --card-foreground: var(--ink);
+    --card: 215 20% 12%;
+    --card-foreground: 210 17% 97%;
     
-    --popover: var(--bg-elevated);
-    --popover-foreground: var(--ink);
+    --popover: 215 20% 12%;
+    --popover-foreground: 210 17% 97%;
     
-    --primary: var(--accent);
-    --primary-foreground: var(--ink);
+    --primary: 355 75% 47%;
+    --primary-foreground: 210 17% 97%;
     
-    --secondary: var(--bg-elevated);
-    --secondary-foreground: var(--ink);
+    --secondary: 215 20% 16%;
+    --secondary-foreground: 210 17% 97%;
     
-    --muted: var(--bg-elevated);
-    --muted-foreground: var(--muted);
+    --muted: 215 20% 16%;
+    --muted-foreground: 213 15% 65%;
     
-    --accent-color: var(--accent);
-    --accent-foreground: var(--ink);
+    --accent: 355 75% 47%;
+    --accent-foreground: 210 17% 97%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: var(--ink);
+    --destructive-foreground: 210 17% 97%;
     
     --border: 215 20% 20%;
     --input: 215 20% 15%;
-    --ring: var(--accent);
+    --ring: 355 75% 47%;
     
     --radius: 0.5rem;
     
     /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--bg)) 0%, hsl(215 25% 10%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--bg-elevated)) 0%, hsl(215 18% 14%) 100%);
-    --shadow-elevated: 0 10px 40px -10px hsl(var(--bg) / 0.8);
-    --shadow-subtle: 0 4px 16px -4px hsl(var(--bg) / 0.4);
+    --gradient-hero: linear-gradient(135deg, hsl(210 24% 8%) 0%, hsl(215 25% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(215 20% 12%) 0%, hsl(215 18% 14%) 100%);
+    --shadow-elevated: 0 10px 40px -10px hsl(210 24% 8% / 0.8);
+    --shadow-subtle: 0 4px 16px -4px hsl(210 24% 8% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Sidebar tokens (consistent with main theme) */

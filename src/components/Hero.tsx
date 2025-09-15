@@ -14,7 +14,7 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h1 className="text-display-lg font-bold text-foreground leading-none">
+              <h1 className="text-display-lg font-bold text-ink leading-none">
                 {content.home.heroTitle}
               </h1>
               <p className="text-xl text-muted max-w-lg leading-relaxed">
@@ -43,7 +43,7 @@ const Hero = () => {
                     {index === 2 && <Award className="h-4 w-4 text-accent" />}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground text-sm">{feature.title}</h3>
+                    <h3 className="font-semibold text-ink text-sm">{feature.title}</h3>
                     <p className="text-muted text-xs leading-relaxed mt-1">{feature.description}</p>
                   </div>
                 </div>
@@ -65,14 +65,14 @@ const Hero = () => {
               <div className="absolute -bottom-4 -left-4 bg-card rounded-xl p-4 shadow-subtle border border-border">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-xs text-foreground font-medium">Active Projects: 15+</span>
+                  <span className="text-xs text-ink font-medium">Active Projects: 15+</span>
                 </div>
               </div>
               
               <div className="absolute -top-4 -right-4 bg-card rounded-xl p-4 shadow-subtle border border-border">
                 <div className="flex items-center space-x-2">
                   <Award className="h-4 w-4 text-accent" />
-                  <span className="text-xs text-foreground font-medium">20+ Years Experience</span>
+                  <span className="text-xs text-ink font-medium">20+ Years Experience</span>
                 </div>
               </div>
             </div>
