@@ -1,0 +1,133 @@
+{
+  "nav": [
+    "Services & Specialties", 
+    "About Us", 
+    "Clients & Projects", 
+    "Locations", 
+    "Careers", 
+    "Contact Us"
+  ],
+  "home": {
+    "heroTitle": "A TEXAS WELDING & FABRICATION COMPANY",
+    "heroSubtitle": "Professional welding and fabrication services for industrial and commercial projects across Texas.",
+    "ctaServices": "SERVICES & SPECIALTIES",
+    "ctaExplore": "EXPLORE PROJECTS",
+    "blurbLeft": "With decades of experience in welding and fabrication, we deliver precision craftsmanship and reliable service for projects of all sizes. From structural steel to custom fabrication, our team brings expertise and quality to every job.",
+    "blurbRight": "Our state-of-the-art facility and skilled craftsmen ensure that every project meets the highest standards of quality and safety. We pride ourselves on timely delivery and exceeding customer expectations.",
+    "employeesNotice": "EMPLOYEES & PAST EMPLOYEES NOTICE — CLICK HERE - 1095-C INFO",
+    "featuresTitle": "Why Choose Us",
+    "features": [
+      {
+        "title": "Expert Craftsmanship",
+        "description": "Certified welders and fabricators with decades of experience"
+      },
+      {
+        "title": "Modern Equipment", 
+        "description": "State-of-the-art welding and fabrication equipment"
+      },
+      {
+        "title": "Quality Assurance",
+        "description": "Rigorous quality control and safety standards"
+      }
+    ]
+  },
+  "services": {
+    "title": "Services & Specialties",
+    "services": [
+      "Structural Steel Welding",
+      "Pipe Welding",
+      "Aluminum Welding", 
+      "Stainless Steel Fabrication",
+      "Custom Metal Fabrication",
+      "Repair & Maintenance",
+      "On-Site Welding Services"
+    ],
+    "specialties": [
+      "Industrial Equipment Fabrication",
+      "Architectural Metalwork",
+      "Heavy Equipment Repair",
+      "Pressure Vessel Work",
+      "Custom Railings & Gates",
+      "Structural Modifications"
+    ]
+  },
+  "about": {
+    "title": "Welcome to Our Company", 
+    "col1": "Founded in Texas, our welding and fabrication company has built a reputation for excellence in the industrial sector. We specialize in custom metalwork, structural welding, and precision fabrication services.",
+    "col2": "Our commitment to quality craftsmanship and customer satisfaction has made us a trusted partner for businesses across Texas. From small repairs to large-scale industrial projects, we deliver results that exceed expectations."
+  },
+  "clients": [
+    {
+      "name": "Dixie Iron Works",
+      "location": "Alice, Texas", 
+      "project": "Structural Steel Framework",
+      "craftOnSite": "Welding & Assembly",
+      "duration": "2 months"
+    },
+    {
+      "name": "Texas Petrochemical",
+      "location": "Houston, Texas",
+      "project": "Pipeline Fabrication", 
+      "craftOnSite": "Pipe Welding",
+      "duration": "6 weeks"
+    },
+    {
+      "name": "Gulf Coast Manufacturing",
+      "location": "Corpus Christi, Texas",
+      "project": "Equipment Modification",
+      "craftOnSite": "Custom Fabrication", 
+      "duration": "3 weeks"
+    }
+  ],
+  "locations": {
+    "southTexas": {
+      "title": "South Texas Office & Fabrication Shop",
+      "address": "123 Industrial Blvd, Alice, TX 78332",
+      "phone": "(361) 555-0123",
+      "fax": "(361) 555-0124"
+    },
+    "corporate": {
+      "title": "Corporate Office", 
+      "address": "P.O. Box 1234, Alice, TX 78333",
+      "phone": "(361) 555-0125",
+      "fax": "(361) 555-0126"
+    },
+    "opsManager": {
+      "name": "Operations Manager",
+      "title": "John Smith, Operations Manager",
+      "phones": ["(361) 555-0127", "(361) 555-0128"],
+      "email": "operations@texaswelding.com"
+    }
+  },
+  "careers": {
+    "intro": "Join our team of skilled professionals in a growing company that values craftsmanship and safety.",
+    "crafts": [
+      "Certified Welders",
+      "Fabricators", 
+      "Pipe Fitters",
+      "Quality Control Inspectors",
+      "Project Managers",
+      "Shop Foremen"
+    ],
+    "hours": "Office Hours: Monday - Friday, 7:00 AM - 5:00 PM",
+    "downloadCta": "CLICK HERE",
+    "downloadText": "Download application packet",
+    "upload": "UPLOAD",
+    "uploadText": "Upload completed application"
+  },
+  "contact": {
+    "phone": "(361) 555-0123",
+    "fax": "(361) 555-0124", 
+    "email": "info@texaswelding.com",
+    "rightColumn": "You may contact us using the information provided. For immediate assistance, please call during business hours. Oops! We could not locate your form.",
+    "locationsRepeat": true
+  },
+  "footer": {
+    "copyright": "Copyright ©2024 Texas Welding & Fabrication Company • All Rights Reserved."
+  },
+  "meta": {
+    "siteName": "Texas Welding & Fabrication Company",
+    "siteDescription": "Professional welding and fabrication services for industrial and commercial projects across Texas.",
+    "siteUrl": "https://texaswelding.com"
+  }
+}

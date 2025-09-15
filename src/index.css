@@ -2,95 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design system inspired by Dispel.com aesthetic - dark industrial theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* Core brand colors (HSL) */
+    --bg: 210 24% 7%; /* #0B0F13 near-black */
+    --bg-elevated: 215 20% 12%; /* #121826 */
+    --ink: 210 17% 97%; /* #F7FAFC off-white */
+    --muted: 213 15% 70%; /* #A7B1C2 */
+    --accent: 355 75% 47%; /* #C1272D brand red */
+    --link: 213 94% 68%; /* #60A5FA */
+    
+    /* Semantic mappings */
+    --background: var(--bg);
+    --foreground: var(--ink);
+    
+    --card: var(--bg-elevated);
+    --card-foreground: var(--ink);
+    
+    --popover: var(--bg-elevated);
+    --popover-foreground: var(--ink);
+    
+    --primary: var(--accent);
+    --primary-foreground: var(--ink);
+    
+    --secondary: var(--bg-elevated);
+    --secondary-foreground: var(--ink);
+    
+    --muted: var(--bg-elevated);
+    --muted-foreground: var(--muted);
+    
+    --accent-color: var(--accent);
+    --accent-foreground: var(--ink);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--ink);
+    
+    --border: 215 20% 20%;
+    --input: 215 20% 15%;
+    --ring: var(--accent);
+    
     --radius: 0.5rem;
+    
+    /* Custom design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--bg)) 0%, hsl(215 25% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--bg-elevated)) 0%, hsl(215 18% 14%) 100%);
+    --shadow-elevated: 0 10px 40px -10px hsl(var(--bg) / 0.8);
+    --shadow-subtle: 0 4px 16px -4px hsl(var(--bg) / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar tokens (consistent with main theme) */
+    --sidebar-background: var(--bg);
+    --sidebar-foreground: var(--ink);
+    --sidebar-primary: var(--accent);
+    --sidebar-primary-foreground: var(--ink);
+    --sidebar-accent: var(--bg-elevated);
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: hsl(215 20% 20%);
+    --sidebar-ring: var(--accent);
   }
 }
 
@@ -99,7 +69,44 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Card styling */
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Focus styles for accessibility */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
+
+@layer utilities {
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .transition-smooth {
+      transition: none;
+    }
   }
 }
