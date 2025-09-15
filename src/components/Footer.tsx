@@ -1,7 +1,20 @@
 import React from 'react';
 import content from '@/content/content.json';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/contact-us');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-slate-900 border-t border-slate-700">
       <div className="container mx-auto px-4 py-16">
@@ -10,22 +23,23 @@ const Footer = () => {
           {/* Company Section */}
           <div className="md:col-span-4">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="h-10 w-10 bg-blue-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">TW</span>
-              </div>
-              <span className="font-bold text-white text-xl">Texas Welding</span>
+              <img 
+                src="/LOGO-Light-Web.png" 
+                alt="IIT Welders Logo" 
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Professional welding and fabrication services for industrial and commercial projects across Texas. Delivering quality craftsmanship with modern technology.
             </p>
             
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <button className="bg-white hover:bg-gray-100 text-slate-900 font-semibold px-6 py-3 rounded-lg text-sm transition-all duration-200">
+              <button 
+                onClick={handleGetStarted}
+                className="bg-white hover:bg-gray-100 text-slate-900 font-semibold px-6 py-3 rounded-lg text-sm transition-all duration-200"
+              >
                 Get started today
-              </button>
-              <button className="border border-slate-600 bg-slate-800/50 text-white hover:bg-slate-700/50 hover:border-slate-500 font-semibold px-6 py-3 rounded-lg text-sm transition-all duration-200 backdrop-blur-sm">
-                Watch on-demand demo
               </button>
             </div>
           </div>
@@ -34,21 +48,12 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="font-semibold text-white mb-6">Services</h3>
             <div className="space-y-3">
-              <a href="/services-and-specialties" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Structural Welding
-              </a>
-              <a href="/services-and-specialties" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Pipe Welding
-              </a>
-              <a href="/services-and-specialties" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Custom Fabrication
-              </a>
-              <a href="/services-and-specialties" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                On-Site Services
-              </a>
-              <a href="/services-and-specialties" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Quality Inspection
-              </a>
+              <button 
+                onClick={() => handleNavigation('/services-and-specialties')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
+                Services & Specialties
+              </button>
             </div>
           </div>
 
@@ -56,21 +61,30 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="font-semibold text-white mb-6">Industries</h3>
             <div className="space-y-3">
-              <a href="/about-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Oil & Gas
-              </a>
-              <a href="/about-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Manufacturing
-              </a>
-              <a href="/about-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Construction
-              </a>
-              <a href="/about-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Energy Utilities
-              </a>
-              <a href="/about-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Chemical Processing
-              </a>
+              <button 
+                onClick={() => handleNavigation('/clients-and-projects')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
+                Offshore Oil Rigs
+              </button>
+              <button 
+                onClick={() => handleNavigation('/clients-and-projects')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
+                Marine Construction
+              </button>
+              <button 
+                onClick={() => handleNavigation('/clients-and-projects')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
+                Industrial Fabrication
+              </button>
+              <button 
+                onClick={() => handleNavigation('/clients-and-projects')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
+                Aerospace Projects
+              </button>
             </div>
           </div>
 
@@ -78,21 +92,36 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="font-semibold text-white mb-6">Resources</h3>
             <div className="space-y-3">
-              <a href="/clients-and-projects" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              <button 
+                onClick={() => handleNavigation('/clients-and-projects')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 Project Portfolio
-              </a>
-              <a href="/about-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
-                Certifications
-              </a>
-              <a href="/locations" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              </button>
+              <button 
+                onClick={() => handleNavigation('/about-us')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
+                About Our Company
+              </button>
+              <button 
+                onClick={() => handleNavigation('/locations')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 Locations
-              </a>
-              <a href="/careers" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              </button>
+              <button 
+                onClick={() => handleNavigation('/careers')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 Careers
-              </a>
-              <a href="/contact-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              </button>
+              <button 
+                onClick={() => handleNavigation('/contact-us')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 Contact Support
-              </a>
+              </button>
             </div>
           </div>
 
@@ -100,18 +129,30 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="font-semibold text-white mb-6">Company</h3>
             <div className="space-y-3">
-              <a href="/about-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              <button 
+                onClick={() => handleNavigation('/about-us')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 About Us
-              </a>
-              <a href="/careers" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              </button>
+              <button 
+                onClick={() => handleNavigation('/careers')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 Jobs
-              </a>
-              <a href="/contact-us" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              </button>
+              <button 
+                onClick={() => handleNavigation('/contact-us')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 Contact Sales
-              </a>
-              <a href="/locations" className="block text-slate-400 hover:text-white transition-colors text-sm">
+              </button>
+              <button 
+                onClick={() => handleNavigation('/locations')} 
+                className="block text-slate-400 hover:text-white transition-colors text-sm text-left"
+              >
                 Office Locations
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -122,15 +163,24 @@ const Footer = () => {
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
               <p className="text-slate-500 text-sm">© 2025 Texas Welding & Fabrication Company</p>
               <div className="flex items-center space-x-4">
-                <a href="/legal" className="text-slate-500 hover:text-slate-400 text-sm">
+                <button 
+                  onClick={() => handleNavigation('/legal')} 
+                  className="text-slate-500 hover:text-slate-400 text-sm"
+                >
                   Legal Center
-                </a>
-                <a href="/privacy" className="text-slate-500 hover:text-slate-400 text-sm">
+                </button>
+                <button 
+                  onClick={() => handleNavigation('/privacy')} 
+                  className="text-slate-500 hover:text-slate-400 text-sm"
+                >
                   Privacy
-                </a>
-                <a href="/terms" className="text-slate-500 hover:text-slate-400 text-sm">
+                </button>
+                <button 
+                  onClick={() => handleNavigation('/terms')} 
+                  className="text-slate-500 hover:text-slate-400 text-sm"
+                >
                   Terms of Service
-                </a>
+                </button>
               </div>
             </div>
             

@@ -1,22 +1,38 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Building, Users, Award } from 'lucide-react';
+import { Building, Users, Award, ChevronRight } from 'lucide-react';
 import content from '@/content/content.json';
 
 const About = () => {
   return (
     <div className="min-h-screen bg-slate-900">
       <Header />
+      
+      {/* Breadcrumbs */}
+      <nav className="bg-slate-800 border-b border-slate-700 py-3">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center space-x-2 text-sm">
+            <button 
+              onClick={() => window.location.href = '/'}
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Home
+            </button>
+            <ChevronRight className="h-4 w-4 text-slate-500" />
+            <span className="text-white font-medium">About Us</span>
+          </div>
+        </div>
+      </nav>
+      
       <main>
         {/* Hero Section with Image */}
         <section className="relative py-32 overflow-hidden">
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/carousel_4.png)' }}
+            style={{ backgroundImage: 'url(/hero-subpage.png)' }}
           >
-            <div className="absolute inset-0 bg-slate-900/80"></div>
           </div>
 
           {/* Geometric Elements */}

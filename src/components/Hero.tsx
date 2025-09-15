@@ -27,8 +27,8 @@ const Hero = () => {
           </svg>
         </div>
         {/* Corner frame elements */}
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 border-l-2 border-b-2 border-blue-400/20"></div>
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 border-r-2 border-t-2 border-blue-400/20"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 border-l-2 border-b-2 border-blue-400/20 animate-pulse"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 border-r-2 border-t-2 border-blue-400/20 animate-pulse" style={{animationDelay: '1s'}}></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-20">
@@ -36,28 +36,28 @@ const Hero = () => {
           {/* Content - Left Side - Exact Dispel Style */}
           <div className="space-y-8 max-w-xl">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.85] tracking-tight">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.85] tracking-tight animate-fadeInLeft animate-visible" style={{transitionDelay: '0.2s'}}>
                 Redefine How You
                 <br />
                 <span className="text-blue-400">Connect to Welding</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed font-light">
+              <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed font-light animate-fadeInLeft animate-visible" style={{transitionDelay: '0.4s'}}>
                 Professional welding and fabrication services for industrial and commercial projects—connecting to quality craftsmanship in under 30 seconds to cut downtime, lower costs, and accelerate modernization.
               </p>
             </div>
 
             {/* CTAs - Exact Dispel Style */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 animate-fadeInLeft animate-visible" style={{transitionDelay: '0.6s'}}>
               <Button 
                 size="xl" 
-                className="bg-white hover:bg-gray-100 text-slate-900 font-semibold text-lg px-8 py-4 h-auto shadow-lg rounded-lg"
+                className="bg-white hover:bg-gray-100 text-slate-900 font-semibold text-lg px-8 py-4 h-auto shadow-lg rounded-lg hover-lift hover-glow"
               >
                 Get Quote
               </Button>
               <Button 
                 variant="outline" 
                 size="xl"
-                className="border-slate-500/50 bg-slate-800/50 text-white hover:bg-slate-700/50 hover:border-slate-400 font-semibold text-lg px-8 py-4 h-auto rounded-lg backdrop-blur-sm"
+                className="border-slate-500/50 bg-slate-800/50 text-white hover:bg-slate-700/50 hover:border-slate-400 font-semibold text-lg px-8 py-4 h-auto rounded-lg backdrop-blur-sm hover-lift"
               >
                 Explore Services
               </Button>
@@ -65,7 +65,7 @@ const Hero = () => {
           </div>
 
           {/* 3D Perspective Container - Right Side - Exact Dispel Style */}
-          <div className="relative flex justify-center items-start w-full -mt-12">
+          <div className="relative flex justify-center items-start w-full -mt-12 animate-fadeInRight animate-visible" style={{transitionDelay: '0.3s'}}>
             {/* 3D Tilted Screen Container - Exact Dispel Style */}
             <div className="relative w-full max-w-xl">
               {/* 3D Container with perspective */}
@@ -106,8 +106,8 @@ const Hero = () => {
               </div>
 
               {/* Floating decorative elements */}
-              <div className="absolute -top-4 -right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-1 h-1 bg-blue-300 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse-blue animate-float"></div>
+              <div className="absolute -bottom-4 -left-4 w-1 h-1 bg-blue-300 rounded-full animate-pulse-blue animate-float" style={{animationDelay: '1s', animationDuration: '7s'}}></div>
             </div>
           </div>
         </div>
