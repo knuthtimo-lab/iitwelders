@@ -1,10 +1,18 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import content from '@/content/content.json';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const location = useLocation();
+
+  // Function to convert nav item to route path
+  const getRoutePath = (item: string) => {
+    if (item === 'Home') return '/';
+    return `/${item.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`;
+  };
 
   return (
     <>
@@ -17,9 +25,9 @@ const Header = () => {
               <span className="text-sm text-muted">
                 Professional welding services across Texas — Get your quote today
               </span>
-              <a href="/contact-us" className="text-accent hover:text-accent/80 text-sm font-medium ml-2">
+              <Link to="/contact-us" className="text-accent hover:text-accent/80 text-sm font-medium ml-2">
                 Learn more →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -30,27 +38,33 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
             {/* Logo - IIT Logo */}
-            <a href="/" className="flex items-center focus-ring rounded-md">
+            <Link to="/" className="flex items-center focus-ring rounded-md">
               <img 
                 src="/IIT-Logo-Web.png" 
                 alt="IIT Welding" 
                 className="h-10 w-auto"
               />
-            </a>
+            </Link>
 
             {/* Desktop Navigation - Dispel Style */}
             <nav className="hidden md:flex items-center space-x-8" aria-label="Primary navigation">
-              {content.nav.map((item) => (
-                <a
-                  key={item}
-                  href={`/${item.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`}
-                  className="text-black hover:text-gray-600 transition-smooth focus-ring rounded-md px-2 py-1 font-medium"
-                >
-                  {item}
-                </a>
-              ))}
+              {content.nav.map((item) => {
+                const routePath = getRoutePath(item);
+                const isActive = location.pathname === routePath;
+                
+                return (
+                  <Link
+                    key={item}
+                    to={routePath}
+                    className={`text-black hover:text-gray-600 transition-smooth focus-ring rounded-md px-2 py-1 font-medium ${
+                      isActive ? 'text-blue-600 font-semibold' : ''
+                    }`}
+                  >
+                    {item}
+                  </Link>
+                );
+              })}
             </nav>
-
 
             {/* Mobile Menu Button */}
             <button
@@ -67,16 +81,23 @@ const Header = () => {
           {isOpen && (
             <nav className="md:hidden py-4 border-t border-slate-600" aria-label="Mobile navigation">
               <div className="flex flex-col space-y-4">
-                {content.nav.map((item) => (
-                  <a
-                    key={item}
-                    href={`/${item.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`}
-                    className="text-black hover:text-gray-600 transition-smooth focus-ring rounded-md px-2 py-2 font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item}
-                  </a>
-                ))}
+                {content.nav.map((item) => {
+                  const routePath = getRoutePath(item);
+                  const isActive = location.pathname === routePath;
+                  
+                  return (
+                    <Link
+                      key={item}
+                      to={routePath}
+                      className={`text-black hover:text-gray-600 transition-smooth focus-ring rounded-md px-2 py-2 font-medium ${
+                        isActive ? 'text-blue-600 font-semibold' : ''
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item}
+                    </Link>
+                  );
+                })}
               </div>
             </nav>
           )}

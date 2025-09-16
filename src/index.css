@@ -71,15 +71,48 @@
 
   html {
     scroll-behavior: smooth;
+    /* Prevent layout shift and ensure consistent background */
+    overflow-x: hidden;
+    background-color: hsl(210 24% 8%) !important;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     color-scheme: dark;
+    /* Prevent white flash during navigation */
+    background-color: hsl(210 24% 8%) !important;
+    min-height: 100vh;
+  }
+
+  /* Prevent flash of unstyled content */
+  #root {
+    background-color: hsl(210 24% 8%);
+    min-height: 100vh;
   }
 }
 
 @layer components {
+  /* Page transition styles */
+  .page-transition {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    background-color: hsl(210 24% 8%);
+    min-height: 100vh;
+  }
+
+  .page-transition-enter {
+    opacity: 0;
+  }
+
+  .page-transition-exit {
+    opacity: 1;
+  }
+
+  .page-transition-exit-active {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
   /* Hero section styling */
   .hero-gradient {
     background: var(--gradient-hero);
